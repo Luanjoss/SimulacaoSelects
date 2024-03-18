@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecao de estados</title>
+    <script src="select.js" defer></script>
+</head>
+<body>
+
+    <label for="estado">Selecione um estado:</label>
+        <select id="estado" name="estado" onchange="selecionarEstado()">
+            <option value="" selected disabled>Selecione um estado</option>
+            <option value="AC">Acre (AC) - Rio Branco</option>
+            <option value="AL">Alagoas (AL) - Maceió</option>
+            <option value="AP">Amapá (AP) - Macapá</option>
+            <option value="AM">Amazonas (AM) - Manaus</option>
+            <option value="BA">Bahia (BA) - Salvador</option>
+            <option value="CE">Ceará (CE) - Fortaleza</option>
+            <option value="DF">Distrito Federal (DF) - Brasília</option>
+            <option value="ES">Espírito Santo (ES) - Vitória</option>
+            <option value="GO">Goiás (GO) - Goiânia</option>
+            <option value="MA">Maranhão (MA) - São Luís</option>
+            <option value="MT">Mato Grosso (MT) - Cuiabá</option>
+            <option value="MS">Mato Grosso do Sul (MS) - Campo Grande</option>
+            <option value="MG">Minas Gerais (MG) - Belo Horizonte</option>
+            <option value="PA">Pará (PA) - Belém</option>
+            <option value="PB">Paraíba (PB) - João Pessoa</option>
+            <option value="PR">Paraná (PR) - Curitiba</option>
+            <option value="PE">Pernambuco (PE) - Recife</option>
+            <option value="PI">Piauí (PI) - Teresina</option>
+            <option value="RJ">Rio de Janeiro (RJ) - Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte (RN) - Natal</option>
+            <option value="RS">Rio Grande do Sul (RS) - Porto Alegre</option>
+            <option value="RO">Rondônia (RO) - Porto Velho</option>
+            <option value="RR">Roraima (RR) - Boa Vista</option>
+            <option value="SC">Santa Catarina (SC) - Florianópolis</option>
+            <option value="SP">São Paulo (SP) - São Paulo</option>
+            <option value="SE">Sergipe (SE) - Aracaju</option>
+            <option value="TO">Tocantins (TO) - Palmas</option>
+        </select>
+        
+        <p id="infoEstado">Estado selecionado:</p>
+        <p id="infoSigla">Sigla do estado:</p>
+        <p id="infoCapital">Capital do estado:</p>
+        
+        
+
+</body> 
+</html>
