@@ -10,10 +10,6 @@ body {
 .container {
     max-width: 800px;
     margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -73,16 +69,10 @@ form button:hover {
  }
 
  .registro {
-    border-top: 2px solid #ccc; /* Adiciona uma linha entre os elementos #output */
+
  }
 
 .resultado {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -97,6 +87,5 @@ form button:hover {
 }
 
 .resultado li {
-    margin-bottom: 5px;
-    color: #555;
+
 }

@@ -3,17 +3,15 @@ class Tabela {
     constructor(nome) {
         this.nome = nome;
         this.campos = [];
-        this.registros = []; // Array para armazenar os registros
     }
 
     // Métodos para adicionar campo e registro à tabela
-    adicionarCampo(campo) {
         this.campos.push(campo);
     }
 
     // Método para adicionar um registro
     adicionarRegistro(registro) {
-        this.registros.push(registro);
+
     }
 }
 
@@ -28,18 +26,11 @@ const alunosRegistros = [
 
 const disciplinasRegistros = [
     { id_dis: 1, curso: 'TSI', periodo: 2, alunos_id: 1 },
-    { id_dis: 2, curso: 'ADM', periodo: 3, alunos_id: 2 },
-    { id_dis: 3, curso: 'IPI', periodo: 1, alunos_id: 3 },
-    { id_dis: 4, curso: 'QUA', periodo: 2, alunos_id: 4 },
-    { id_dis: 5, curso: 'LOG', periodo: 1, alunos_id: 5 }
-];
+    { id_dis: 2, curso: 'ADM', periodo: 3, alunos_id: 2 }];
 
 const enderecosRegistros = [
     { id_end: 1, cidade: 'Igarassu', bairro: 'Centro', rua: 'Rua A, 123', alunos_id: 1  },
-    { id_end: 2, cidade: 'Abreu e Lima', bairro: 'Centro', rua: 'Av. B, 456', alunos_id: 2  },
-    { id_end: 3, cidade: 'Itamaraca', bairro: 'centro', rua: 'Rua C, 789', alunos_id: 3  },
-    { id_end: 4, cidade: 'Igarassu', bairro: 'Inhamâ', rua: 'Av. D, 321', alunos_id: 4  },
-    { id_end: 5, cidade: 'Abreu e Lima', bairro: 'Caetés II', rua: 'Rua E, 654', alunos_id: 5  }
+    { id_end: 2, cidade: 'Abreu e Lima', bairro: 'Centro', rua: 'Av. B, 456', alunos_id: 2  }
 ];
 
 // Função para carregar os dados de uma tabela
@@ -52,9 +43,6 @@ function carregarTabela(nomeTabela, campos) {
             break;
         case 'disciplinas':
             disciplinasRegistros.forEach(registro => tabela.adicionarRegistro(registro));
-            break;
-        case 'enderecos':
-            enderecosRegistros.forEach(registro => tabela.adicionarRegistro(registro));
             break;
             default:
             console.error(`Tabela '${nomeTabela}' não encontrada.`);
@@ -80,9 +68,6 @@ function executarSelect(tabelas, campos) {
                 break;
             case 'disciplinas':
                 camposTabela = ['id_dis', 'curso', 'periodo', 'alunos_id'];
-                break;
-            case 'enderecos':
-                camposTabela = ['id_end', 'cidade', 'bairro', 'rua', 'alunos_id'];
                 break;
             default:
                 console.error(`Tabela '${nomeTabela}' não encontrada.`);
@@ -112,12 +97,6 @@ function realizarJoins(dadosTabelas, campos) {
     const resultados = [];
     const tabelaBase = dadosTabelas[0];
 
-    tabelaBase.registros.forEach(registroBase => {
-        const registroJoin = {};
-        campos.forEach(campo => {
-            if (tabelaBase.campos.includes(campo)) {
-                registroJoin[campo] = registroBase[campo];
-            }
         });
 
         for (let i = 1; i < dadosTabelas.length; i++) {
@@ -129,15 +108,6 @@ function realizarJoins(dadosTabelas, campos) {
                 continue;
             }
 
-            tabelaAtual.registros.forEach(registro => {
-                if (registro[campoJoin] === registroBase.id) { //Para mudar o nome do id da tabela principal mudar aqui tambem
-                    for (const campo in registro) {
-                        if (campos.includes(campo)) {
-                            registroJoin[campo] = registro[campo];
-                        }
-                    }
-                }
-            });
         }
 
         resultados.push(registroJoin);
@@ -160,13 +130,6 @@ function exibirResultados(resultados) {
         titulo.textContent = `Registro ${index + 1}`;
         registroDiv.appendChild(titulo);
 
-        const listaCampos = document.createElement("ul");
-        for (const campo in registro) {
-            const campoItem = document.createElement("li");
-            campoItem.textContent = `${campo}: ${registro[campo]}`;
-            listaCampos.appendChild(campoItem);
-        }
-        registroDiv.appendChild(listaCampos);
 
         outputDiv.appendChild(registroDiv);
     });
