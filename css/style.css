@@ -69,8 +69,11 @@ form button:hover {
 
 #output {
     margin-top: 20px;
-    border-top: 2px solid #ccc; /* Adiciona uma linha entre os elementos #output */
+    
+ }
 
+ .registro {
+    border-top: 2px solid #ccc; /* Adiciona uma linha entre os elementos #output */
  }
 
 .resultado {
